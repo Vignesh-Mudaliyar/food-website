@@ -149,7 +149,7 @@ let form = document.getElementById('form');
 	
      window.onscroll = () => {
 		 
-	navbar.style.backgroundColor= "black";
+	navbar.style.backgroundColor= "rgba(255,255,255,0.4)";
 	 navbar.style.color = "black";
 		
 		
