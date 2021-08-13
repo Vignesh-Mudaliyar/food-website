@@ -5,6 +5,7 @@ html{
 	color:lightgrey;
 	/* opacity:1; */
 }
+
 *{
 	padding:0;
 	margin:0;
@@ -76,7 +77,7 @@ html{
 	color:white;
 	font-size: 20px;
 	font-family: headingFont;
-	padding: 18px 1vw;
+	padding: 17px 1vw;
 	display: inline;   
 	cursor:pointer;
 }
@@ -463,17 +464,45 @@ html{
 	background-color:lightgrey;
 }
 .cards{
-	width:90%;
-	display:flex;
-	flex-wrap:wrap;
+	
+	width:95%;
+	display:flex; 
+	overflow-x:scroll;
+	overflow:hidden;
+	overflow-style:none;
+	background-color:rgba(255,255,255,0.6);
 	margin:50px 0;
-	justify-content:space-evenly;
+	justify-content:flex-start; 
+	align-items:center;
+	scroll-behavior:smooth;
 }
 .card{
-	width:350px;
-	 height:auto;
-	margin:15px;
+	min-width:350px;
+	 min-height:600px;
+	margin:15px 50px;
 	background-color:white;
+}
+
+.slideBtn{
+	min-height:50px;
+	min-width:50px;
+	/* padding:50px 50px; */
+	background-color: rgba(255,255,255,0.7);
+	font-size:20px;
+	border-radius:50%; 
+	/* z-index:1; */
+}
+
+.slideBtnLeft{
+	position:sticky;
+	/* top:45%; */
+	left:35px;
+}
+
+.slideBtnRight{
+	position:sticky;
+	/* top:45%; */
+	right:35px;
 }
 
 .subcard{	

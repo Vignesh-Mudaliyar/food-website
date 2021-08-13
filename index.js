@@ -149,7 +149,7 @@ let form = document.getElementById('form');
 	
      window.onscroll = () => {
 		 
-	navbar.style.backgroundColor= "rgba(255,255,255,0.3)";
+	navbar.style.backgroundColor= "black";
 	 navbar.style.color = "black";
 		
 		
@@ -181,7 +181,28 @@ let form = document.getElementById('form');
 		
 	})
 	
-	 }
+	}
+	
+	let cards = document.getElementById('cards');
+	let slideBtnLeft = document.getElementById('slideBtnLeft');
+	let slideBtnRight = document.getElementById('slideBtnRight');
+	
+	slideBtnLeft.addEventListener("click",() => {
+		cards.scrollLeft -= 400;
+	
+	})
+	  
+	  slideBtnRight.addEventListener("click",() => {
+		  
+		  cards.scrollLeft += 400;
+		  
+		  // another way
+		  // cards.scrollBy({
+				// left: +300,
+				//behavior:smooth,
+			// }) 
+		
+	})
 	 
 	 
 	
