@@ -10,6 +10,7 @@ let events = document.getElementById('eventsPage');
 let menu = document.getElementById('menuPage');
 let contact = document.getElementById('contactPage');
 
+
  const function1 = (id,nbar) => {
 	
 	welcomeNav.style.backgroundColor= "";
@@ -136,10 +137,15 @@ let form = document.getElementById('form');
 	
 	
 
+	
+
 	let sections = document.querySelectorAll('section');
+	const navLink = document.querySelectorAll('#subnav2 ul li');
 	let navbar= document.getElementById('navbar');
+	console.log(sections[0]);
  
 	
+		
 	
      window.onscroll = () => {
 		 
@@ -156,7 +162,7 @@ let form = document.getElementById('form');
 		
 		if(window.scrollY >= Tops-100 && window.scrollY <= Tops + height)
 		 {
-			const navLink = document.querySelectorAll('#subnav2 ul li');
+			
 			
 			navLink.forEach((li) =>{
 				
@@ -176,4 +182,6 @@ let form = document.getElementById('form');
 	})
 	
 	 }
+	 
+	 
 	
