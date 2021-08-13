@@ -477,8 +477,8 @@ html{
 	scroll-behavior:smooth;
 }
 .card{
-	min-width:350px;
-	 min-height:600px;
+	min-width:330px;
+	 height:auto;
 	margin:15px 50px;
 	background-color:white;
 }
