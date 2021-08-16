@@ -34,21 +34,19 @@ contactsNav.addEventListener("click",() => function1(contact,contactsNav));
 
 	
 	
+	// hamburger menu
+	let hambug = document.getElementById('hambug');
+	let subnav2 = document.getElementById('subnav2');
 
-let hambug = document.getElementById('hambug');
-let subnav2 = document.getElementById('subnav2');
-
-hambug.addEventListener('click',() =>{
-	
-		subnav2.classList.toggle("subnav2");
-});
+	hambug.addEventListener('click',() =>{
+		
+			subnav2.classList.toggle("subnav2");
+	});
 
 
+	// validations
+	let form = document.getElementById('form');
 
-let form = document.getElementById('form');
-
-	
-	
 	form.addEventListener('submit',(e) =>{
 		
 		e.preventDefault();
@@ -138,14 +136,10 @@ let form = document.getElementById('form');
 	
 
 	
-
+	// for scrollspy
 	let sections = document.querySelectorAll('section');
 	const navLink = document.querySelectorAll('#subnav2 ul li');
 	let navbar= document.getElementById('navbar');
-	console.log(sections[0]);
- 
-	
-		
 	
      window.onscroll = () => {
 		 
@@ -183,26 +177,51 @@ let form = document.getElementById('form');
 	
 	}
 	
+	
+	// for carousel
 	let cards = document.getElementById('cards');
 	let slideBtnLeft = document.getElementById('slideBtnLeft');
 	let slideBtnRight = document.getElementById('slideBtnRight');
+	
+	if(cards.scrollLeft <= 0)
+		slideBtnLeft.disabled = true;
+	
 	
 	slideBtnLeft.addEventListener("click",() => {
 		cards.scrollLeft -= 400;
 	
 	})
 	  
-	  slideBtnRight.addEventListener("click",() => {
+	slideBtnRight.addEventListener("click",() => {
 		  
+		  let sc = cards.scrollWidth - (cards.offsetWidth+200);
+		  console.log(sc,cards.scrollLeft)
+		  
+		  if(cards.scrollLeft >= sc)
+		  {
+			  cards.scrollLeft = 0;
+		  }
+		  else{
+			  
 		  cards.scrollLeft += 400;
+		  }
 		  
 		  // another way
 		  // cards.scrollBy({
 				// left: +300,
 				//behavior:smooth,
-			// }) 
-		
+			// }) 	
 	})
+	
+	cards.onscroll=() =>{
+		if(cards.scrollLeft <= 0){
+			slideBtnLeft.disabled = true;
+		}
+		else{
+			slideBtnLeft.disabled = false;
+		}
+		
+	}
 	 
 	 
 	
