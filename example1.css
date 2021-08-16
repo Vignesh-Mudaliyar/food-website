@@ -468,13 +468,13 @@ html{
 	width:95%;
 	display:flex; 
 	overflow-x:scroll;
-	overflow:hidden;
-	overflow-style:none;
+	overflow:hidden; 
+	 overflow-style:none; 
 	background-color:rgba(255,255,255,0.6);
 	margin:50px 0;
 	justify-content:flex-start; 
 	align-items:center;
-	scroll-behavior:smooth;
+	scroll-behavior:smooth; 
 }
 .card{
 	min-width:330px;
@@ -484,6 +484,7 @@ html{
 }
 
 .slideBtn{
+	position:absolute;
 	min-height:50px;
 	min-width:50px;
 	/* padding:50px 50px; */
@@ -495,15 +496,15 @@ cursor:pointer;
 }
 
 .slideBtnLeft{
-	position:sticky;
+	
 	/* top:45%; */
-	left:35px;
+	left:45px;
 }
 
 .slideBtnRight{
-	position:sticky;
+	/* position:absolute; */
 	/* top:45%; */
-	right:35px;
+	right:45px;
 }
 
 .subcard{	

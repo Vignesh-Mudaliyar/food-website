@@ -183,45 +183,47 @@ contactsNav.addEventListener("click",() => function1(contact,contactsNav));
 	let slideBtnLeft = document.getElementById('slideBtnLeft');
 	let slideBtnRight = document.getElementById('slideBtnRight');
 	
-	if(cards.scrollLeft <= 0)
-		slideBtnLeft.disabled = true;
+	
+	
+	
+	
 	
 	
 	slideBtnLeft.addEventListener("click",() => {
-		cards.scrollLeft -= 400;
+		 
+		 
+		 // cards.scrollLeft -= 400;
+		 let card = document.getElementsByClassName('card')[6];
+			
+			cards.prepend(card);
+		
 	
 	})
 	  
 	slideBtnRight.addEventListener("click",() => {
-		  
-		  let sc = cards.scrollWidth - (cards.offsetWidth+100);
-		  console.log(sc,cards.scrollLeft)
-		  
-		  if(cards.scrollLeft >= sc)
-		  {
-			  cards.scrollLeft = 0;
-		  }
-		  else{
-			  
-		  cards.scrollLeft += 400;
-		  }
-		  
-		  // another way
-		  // cards.scrollBy({
-				// left: +300,
-				//behavior:smooth,
-			// }) 	
+		
+		
+			
+			 // cards.scrollLeft += 400;
+			 let card = document.getElementsByClassName('card')[0];
+			
+			cards.append(card);
+			 // autoSccroll();
+			 
 	})
 	
-	cards.onscroll=() =>{
-		if(cards.scrollLeft <= 0){
-			slideBtnLeft.disabled = true;
-		}
-		else{
-			slideBtnLeft.disabled = false;
-		}
-		
-	}
+
+	
+	 // const autoSccroll = () => {
+		 // console.log('hello')
+		 // cards.scrollBy(50,0);
+		  // // let cr = document.getElementById('card');
+		 
+		  // // cards.append(cr);
+		 // scrollLate = setTimeout(() =>{autoSccroll()},80)
+	 // }
+	
+	
 	 
 	 
 	
