@@ -194,7 +194,7 @@ contactsNav.addEventListener("click",() => function1(contact,contactsNav));
 	  
 	slideBtnRight.addEventListener("click",() => {
 		  
-		  let sc = cards.scrollWidth - (cards.offsetWidth+200);
+		  let sc = cards.scrollWidth - (cards.offsetWidth+100);
 		  console.log(sc,cards.scrollLeft)
 		  
 		  if(cards.scrollLeft >= sc)
