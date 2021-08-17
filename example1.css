@@ -468,8 +468,8 @@ html{
 	width:95%;
 	display:flex; 
 	overflow-x:scroll;
-	overflow:hidden; 
-	 overflow-style:none; 
+	overflow:hidden;   
+	 overflow-style:none;   
 	background-color:rgba(255,255,255,0.6);
 	margin:50px 0;
 	justify-content:flex-start; 

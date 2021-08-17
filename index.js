@@ -182,6 +182,7 @@ contactsNav.addEventListener("click",() => function1(contact,contactsNav));
 	let cards = document.getElementById('cards');
 	let slideBtnLeft = document.getElementById('slideBtnLeft');
 	let slideBtnRight = document.getElementById('slideBtnRight');
+	;
 	
 	
 	
@@ -189,41 +190,123 @@ contactsNav.addEventListener("click",() => function1(contact,contactsNav));
 	
 	
 	
+	 let crd = document.querySelectorAll('.card');
+	 let card = [...crd];
+	 
+	 card.forEach((er) => {
+			let offsetRight = er.offsetLeft+er.offsetWidth;
+			let scrollRight = cards.scrollLeft + cards.offsetWidth;
+			
+			if(offsetRight < scrollRight && er.offsetLeft > cards.scrollLeft){
+				er.style.backgroundColor = "lightgrey";
+				er.style.boxShadow = "0px 0px 20px 5px grey";
+			}else{
+				er.style.backgroundColor = "";
+				er.style.boxShadow = "";
+			}
+			console.log(offsetRight);
+		})
+	 
+	 
 	slideBtnLeft.addEventListener("click",() => {
 		 
 		 
-		 // cards.scrollLeft -= 400;
-		 let card = document.getElementsByClassName('card')[6];
-			
-			cards.prepend(card);
+		 
+		 
+		  // first method 
+		   if(cards.scrollLeft <= 5) {
+			  let card1 = [...card];
+			  card1.reverse();
+			   card1.forEach((crd) => {
+					 
+					  let node = crd.cloneNode(true);
+					  
+					   cards.prepend(node);
+					 });
+					  
+			  cards.scrollLeft += 2000 ;
+			 
+		  }
+		  else{
+			  cards.scrollLeft -= 400;
+		  }
+		 
+		 
+		 
+		 // second method 
+		 
+		// let card = document.querySelectorAll('.card')
+			// cards.prepend(card[card.length-1]);
 		
 	
 	})
+	
+	 
 	  
 	slideBtnRight.addEventListener("click",() => {
 		
 		
+		
+		// first method
+			  cards.scrollLeft += 500;
+			  
+			 if(cards.scrollLeft >=cards.scrollWidth-cards.offsetWidth-515){
 			
-			 // cards.scrollLeft += 400;
-			 let card = document.getElementsByClassName('card')[0];
+				  card.forEach((crd) => {
+					 
+					  let node = crd.cloneNode(true);
+					   cards.appendChild(node);
+					 });
+			};
 			
-			cards.append(card);
-			 // autoSccroll();
+			//second method
+			// let card = document.getElementsByClassName('card')[0];
+			// cards.appendChild(card);
+				
+			 
+			
 			 
 	})
+	
+	cards.onscroll = () => {
+		
+		let card2 = document.querySelectorAll('.card');
+		
+		card2.forEach((er) => {
+			let offsetRight = er.offsetLeft+er.offsetWidth;
+			let scrollRight = cards.scrollLeft + cards.offsetWidth;
+			
+			if(offsetRight < scrollRight && er.offsetLeft > cards.scrollLeft){
+				er.style.backgroundColor = "lightgrey";
+				er.style.boxShadow = "0px 0px 20px 5px grey";
+			}
+			else{
+				er.style.backgroundColor = "";
+				er.style.boxShadow = "";
+			}
+			
+		})
+		
+	
+	}
 	
 
 	
 	 // const autoSccroll = () => {
-		 // console.log('hello')
-		 // cards.scrollBy(50,0);
-		  // // let cr = document.getElementById('card');
-		 
-		  // // cards.append(cr);
-		 // scrollLate = setTimeout(() =>{autoSccroll()},80)
+		  
+		  // cards.scrollBy(50,0);
+		  
+		  // scrollLate = setTimeout(() =>{autoSccroll()},80)
 	 // }
 	
 	
+
+
+
+	
 	 
+	 
+	
+	
 	 
 	
